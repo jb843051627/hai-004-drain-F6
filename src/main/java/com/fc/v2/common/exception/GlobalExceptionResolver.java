@@ -136,6 +136,16 @@ public class GlobalExceptionResolver{
     {
         return AjaxResult.error(e.getMessage());
     }
+
+    /**
+     * 机组运行记录单登记业务规则异常（时长负/零/超量程、当年重单、停用站开新单、
+     * 单号空缺或重号等红线）：坏单当场退回，不放进流水
+     */
+    @ExceptionHandler(DrainRunRecordException.class)
+    public AjaxResult drainRunRecordException(DrainRunRecordException e)
+    {
+        return AjaxResult.error(e.getMessage());
+    }
     
     /**
      * 拦截未知的运行时异常

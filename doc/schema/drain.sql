@@ -180,6 +180,26 @@ CREATE TABLE IF NOT EXISTS t_drain_station (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='在册泵站档案';
 
+-- 泵站类别标签：层级结构，parent_code 空为根。挂站只许挂末级（没有任何未删子类别的
+-- 那一层），挂到上层当场报错；停用(1)的老类别不再可选，先前挂过的站原样留着不追溯。
+-- 站档案 site_type 存类别编码 type_code；老数据里的中文类别名属历史挂法，原样保留。
+CREATE TABLE IF NOT EXISTS t_drain_site_type (
+  id bigint NOT NULL COMMENT '主键',
+  type_code varchar(32) NOT NULL COMMENT '类别编码(与站档案 site_type 同宽)',
+  type_name varchar(128) DEFAULT NULL COMMENT '类别名称',
+  parent_code varchar(64) DEFAULT NULL COMMENT '父类别编码(空=根类别)',
+  status int DEFAULT '0' COMMENT '类别状态 0启用 1停用(停用的老类别不再可选)',
+  del_flag int DEFAULT '0' COMMENT '删除标记 0正常 1删除',
+  create_by varchar(64) DEFAULT NULL COMMENT '创建者',
+  create_time datetime DEFAULT NULL COMMENT '创建时间',
+  update_by varchar(64) DEFAULT NULL COMMENT '更新者',
+  update_time datetime DEFAULT NULL COMMENT '更新时间',
+  remark varchar(500) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_type_code (type_code),
+  KEY idx_parent (parent_code, del_flag)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='泵站类别标签(层级,只许挂末级)';
+
 CREATE TABLE IF NOT EXISTS t_drain_work_order (
   id bigint NOT NULL COMMENT '主键',
   biz_no varchar(64) DEFAULT NULL COMMENT '作业单号',

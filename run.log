@@ -1,0 +1,461 @@
+07:37:12,286 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+07:37:12,286 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/D:/Develop/Workspace-trae/solo-workspace/_pairs/hai-004-drain-F6/hai-004-b/target/v2-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback.xml]
+07:37:12,394 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@7506e922 - URL [jar:file:/D:/Develop/Workspace-trae/solo-workspace/_pairs/hai-004-drain-F6/hai-004-b/target/v2-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback.xml] is not of type file
+07:37:12,920 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+07:37:12,927 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [jar:file:/D:/Develop/Workspace-trae/solo-workspace/_pairs/hai-004-drain-F6/hai-004-b/target/v2-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/logback.xml] 
+07:37:12,927 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+07:37:12,933 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+07:37:12,937 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [console]
+07:37:13,110 |-WARN in ch.qos.logback.core.ConsoleAppender[console] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+07:37:13,110 |-WARN in ch.qos.logback.core.ConsoleAppender[console] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+07:37:13,110 |-WARN in ch.qos.logback.core.ConsoleAppender[console] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+07:37:13,111 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+07:37:13,129 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [appLogAppender]
+07:37:13,157 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1323468230 - No compression will be used
+07:37:13,159 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1323468230 - Will use the pattern /springbootv2-log/springbootv2-%d{yyyy-MM-dd}-%i.log for the active file
+07:37:13,162 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@621be5d1 - The date pattern is 'yyyy-MM-dd' from file name pattern '/springbootv2-log/springbootv2-%d{yyyy-MM-dd}-%i.log'.
+07:37:13,162 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@621be5d1 - Roll-over at midnight.
+07:37:13,173 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@621be5d1 - Setting initial period to Sun Jun 21 13:24:34 CST 2026
+07:37:13,173 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@621be5d1 - SizeAndTimeBasedFNATP is deprecated. Use SizeAndTimeBasedRollingPolicy instead
+07:37:13,173 |-WARN in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@621be5d1 - For more information see http://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+07:37:13,179 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[appLogAppender] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+07:37:13,180 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[appLogAppender] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+07:37:13,180 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[appLogAppender] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+07:37:13,182 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[appLogAppender] - Active log file name: /springbootv2-log/springbootv2.log
+07:37:13,182 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[appLogAppender] - File property is set to [/springbootv2-log/springbootv2.log]
+07:37:13,185 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.mybatis] to ERROR
+07:37:13,186 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [java.sql.Connection] to DEBUG
+07:37:13,186 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [java.sql.Statement] to DEBUG
+07:37:13,186 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [java.sql.PreparedStatement] to DEBUG
+07:37:13,186 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.fc] to DEBUG
+07:37:13,189 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@113:28 - no applicable action for [springProfile], current ElementPath  is [[configuration][springProfile]]
+07:37:13,189 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@114:25 - no applicable action for [root], current ElementPath  is [[configuration][springProfile][root]]
+07:37:13,189 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@116:34 - no applicable action for [appender-ref], current ElementPath  is [[configuration][springProfile][root][appender-ref]]
+07:37:13,189 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@121:32 - no applicable action for [springProfile], current ElementPath  is [[configuration][springProfile]]
+07:37:13,189 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@122:25 - no applicable action for [root], current ElementPath  is [[configuration][springProfile][root]]
+07:37:13,189 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@123:46 - no applicable action for [appender-ref], current ElementPath  is [[configuration][springProfile][root][appender-ref]]
+07:37:13,189 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+07:37:13,190 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@573fd745 - Registering current configuration as safe fallback point
+
+2026-09-30 07:37:15.058 -> [main] -> INFO  com.fc.V2Application - Starting V2Application v0.0.1-SNAPSHOT using Java 1.8.0_101 on JIA-PC-WIN10 with PID 17124 (D:\Develop\Workspace-trae\solo-workspace\_pairs\hai-004-drain-F6\hai-004-b\target\v2-0.0.1-SNAPSHOT.jar started by Administrator in D:\Develop\Workspace-trae\solo-skill)
+2026-09-30 07:37:15.063 -> [main] -> DEBUG com.fc.V2Application - Running with Spring Boot v2.7.5, Spring v5.3.23
+2026-09-30 07:37:15.064 -> [main] -> INFO  com.fc.V2Application - The following 1 profile is active: "dev"
+2026-09-30 07:37:18.754 -> [main] -> INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-30 07:37:18.759 -> [main] -> INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-30 07:37:18.877 -> [main] -> INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 0 Redis repository interfaces.
+2026-09-30 07:37:21.774 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.fc.v2.shiro.config.ShiroConfig$$EnhancerBySpringCGLIB$$bccfecce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:21.807 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:21.918 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [com.fc.v2.common.conf.MybatisPlusConfig$$EnhancerBySpringCGLIB$$9fc38336] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:22.166 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:22.179 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:22.244 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:22.397 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'masterDataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:22.464 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSource' of type [com.fc.v2.common.dataSources.DynamicDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+2026-09-30 07:37:22.659 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisConfiguration' of type [com.baomidou.mybatisplus.core.MybatisConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:22.681 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'globalConfig' of type [com.baomidou.mybatisplus.core.config.GlobalConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Parsed mapper file: 'class path resource [mybatis/auto/TSysAreaMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysCityMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysDepartmentMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysDictDataMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysDictTypeMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysEmailMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysFileMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysInterUrlMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysNoticeMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysNoticeUserMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TsysOperLogMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysPermissionMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TsysPermissionRoleMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysPositionMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysProvinceMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysQuartzJobLogMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysQuartzJobMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TsysRoleMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysRoleUserMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TSysStreetMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/auto/TsysUserMapper.xml]'
+Can not find table primary key in Class: "com.fc.v2.model.custom.TsysTables".
+Parsed mapper file: 'class path resource [mybatis/custom/GeneratorMapper.xml]'
+Parsed mapper file: 'class path resource [mybatis/custom/SysUtilMapper.xml]'
+2026-09-30 07:37:26.773 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+2026-09-30 07:37:26.910 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.927 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$218b751] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.952 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.957 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysUserMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.964 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysUserMapper' of type [com.sun.proxy.$Proxy93] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.979 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysRoleUserMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.981 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysRoleUserMapper' of type [com.sun.proxy.$Proxy94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:26.984 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysRoleUserServiceImpl' of type [com.fc.v2.service.impl.TSysRoleUserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.224 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.225 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysRoleMapper' of type [com.sun.proxy.$Proxy96] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.241 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysPermissionRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.243 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysPermissionRoleMapper' of type [com.sun.proxy.$Proxy97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.246 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysPermissionRoleServiceImpl' of type [com.fc.v2.service.impl.TSysPermissionRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.266 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysRoleServiceImpl' of type [com.fc.v2.service.impl.TSysRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.291 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysUserServiceImpl' of type [com.fc.v2.service.impl.TSysUserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.319 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysPermissionMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.327 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysPermissionMapper' of type [com.sun.proxy.$Proxy101] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.331 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'TSysPermissionServiceImpl' of type [com.fc.v2.service.impl.TSysPermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.357 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [com.fc.v2.shiro.service.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:27.365 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheManager' of type [org.apache.shiro.cache.MemoryConstrainedCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.393 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.480 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionManager' of type [com.fc.v2.shiro.service.ShiroSession] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.491 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.589 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getAuthorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.590 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'removeDruidAdConfig' of type [com.fc.v2.common.druid.RemoveDruidAdConfig$$EnhancerBySpringCGLIB$$b309eade] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.606 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.608 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:31.609 -> [main] -> INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-09-30 07:37:32.690 -> [main] -> WARN  io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2026-09-30 07:37:32.883 -> [main] -> INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2026-09-30 07:37:32.883 -> [main] -> INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 17726 ms
+2026-09-30 07:37:33.568 -> [main] -> INFO  o.s.boot.web.servlet.RegistrationBean - Filter webStatFilter was not registered (possibly already registered?)
+xxxxxxxxxxxxxxxxxx
+2026-09-30 07:37:38.789 -> [main] -> INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-30 07:37:38.794 -> [main] -> INFO  org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2026-09-30 07:37:38.814 -> [main] -> INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-30 07:37:38.814 -> [main] -> INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+2026-09-30 07:37:38.816 -> [main] -> INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-30 07:37:38.817 -> [main] -> INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-30 07:37:38.818 -> [main] -> INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2026-09-30 07:37:38.818 -> [main] -> INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1817f1eb] was not registered for synchronization because synchronization is not active
+2026-09-30 07:37:39.646 -> [main] -> INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6b3e12b5] will not be managed by Spring
+==>  Preparing: SELECT id,job_name,job_group,invoke_target,cron_expression,misfire_policy,concurrent,status,create_by,create_time,update_by,update_time,remark FROM t_sys_quartz_job
+==> Parameters: 
+<==    Columns: id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, update_by, update_time, remark
+<==        Row: 332182389491109888, v2Task2, SYSTEM, v2Task.runTask2(1,2l,'asa',true,2D), */5 * * * * ?, 2, 0, 1, null, null, null, null, null
+<==        Row: 332182389491109900, 汛期巡检自动派单, DRAIN, v2Task.dispatchPatrol(), 0 0/10 * * * ?, 2, 1, 0, seed, 2026-09-27 00:56:09, , null, 值守时段内照排班自动派巡检；空档不派；坏行跳过
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1817f1eb]
+2026-09-30 07:37:40.965 -> [main] -> INFO  org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36b0fcd5] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6b3e12b5] will not be managed by Spring
+==>  Preparing: SELECT id,inter_name,url,type,create_by,create_time,update_by,update_time,remark FROM t_sys_inter_url
+==> Parameters: 
+<==    Columns: id, inter_name, url, type, create_by, create_time, update_by, update_time, remark
+<==        Row: 411495038321823744, 字典表新增, /DictDataController/add, 2, null, null, null, null, null
+<==        Row: 506433268967673856, 字典表修改, /DictDataController/edit, 2, null, null, null, null, null
+<==        Row: 506434978159136768, 字典表删除, /DictDataController/remove, 3, null, null, null, null, null
+<==        Row: 506435565655298048, 字典表状态修改, /DictDataController/updateDefault, 4, null, null, null, null, null
+<==        Row: 506435921147727872, 字典表状态修改2, /DictDataController/updateEnable, 4, null, null, null, null, null
+<==        Row: 506436031403397120, 字典表类型新增, /DictTypeController/add, 2, null, null, null, null, null
+<==        Row: 506436148680331264, 字典表类型修改, /DictTypeController/edit, 2, null, null, null, null, null
+<==        Row: 506436165776314368, 字典表类型删除, /DictTypeController/remove, 3, null, null, null, null, null
+<==        Row: 506436180578013184, 字典表类型状态修改, /DictTypeController/updateEnable, 4, null, null, null, null, null
+<==        Row: 506436662134444032, 邮件新增, /EmailController/add, 2, null, null, null, null, null
+<==        Row: 506436757722632192, 邮件删除, /EmailController/remove, 3, null, null, null, null, null
+<==        Row: 506437010966319104, 日志删除, /LogController/remove, 3, null, null, null, null, null
+<==        Row: 506437420099702784, oss新增, /oss/bucket/, 2, null, null, null, null, null
+<==        Row: 506437439112482816, oss删除, /oss/bucket/, 3, null, null, null, null, null
+<==        Row: 506437964436475904, 权限新增, /PermissionController/add, 2, null, null, null, null, null
+<==        Row: 506438040823140352, 权限保存, /PermissionController/edit, 2, null, null, null, null, null
+<==        Row: 506438121399914496, 权限删除, /PermissionController/remove, 3, null, null, null, null, null
+<==        Row: 506438208599494656, 权限授权, /PermissionController/saveRolePower, 4, null, null, null, null, null
+<==        Row: 506438306276446208, 权限状态修改, /PermissionController/updateVisible, 4, null, null, null, null, null
+<==        Row: 506438447226032128, 定时器新增, /SysQuartzJobController/add, 2, null, null, null, null, null
+<==        Row: 506438589874311168,  任务调度状态修改, /SysQuartzJobController/changeStatus, 4, null, null, null, null, null
+<==        Row: 506438725388079104, 定时器保存, /SysQuartzJobController/edit, 2, null, null, null, null, null
+<==        Row: 506438870959788032, 定时器修改, /SysQuartzJobController/remove, 3, null, null, null, null, null
+<==        Row: 506439003516571648, 定时任务日志删除, /SysQuartzJobLogController/remove, 3, null, null, null, null, null
+<==        Row: 506439171481669632, 角色新增, /RoleController/add, 2, null, null, null, null, null
+<==        Row: 506439186778296320, 角色修改, /RoleController/edit, 4, null, null, null, null, null
+<==        Row: 506439297122045952, 角色删除, /RoleController/remove, 3, null, null, null, null, null
+<==        Row: 506439669773373440, 地区新增, /SysAreaController/add, 2, null, null, null, null, null
+<==        Row: 506439687859212288, 地区修改, /SysAreaController/edit, 2, null, null, null, null, null
+<==        Row: 506439835490324480, 地区删除, /SysAreaController/remove, 3, null, null, null, null, null
+<==        Row: 506440103976112128, City新增, /SysCityController/add, 2, null, null, null, null, null
+<==        Row: 506440145147400192, City修改,  /SysCityController/edit, 2, null, null, null, null, null
+<==        Row: 506440217188765696, City删除, /SysCityController/remove, 3, null, null, null, null, null
+<==        Row: 506440386873528320, 部门新增, /SysDepartmentController/add, 2, null, null, null, null, null
+<==        Row: 506440448223612928, 部门修改, /SysDepartmentController/edit, 4, null, null, null, null, null
+<==        Row: 506440515110178816, 部门删除, /SysDepartmentController/remove, 3, null, null, null, null, null
+<==        Row: 506440574635741184, 部门状态, /SysDepartmentController/updateVisible, 4, null, null, null, null, null
+<==        Row: 506440668508459008, 拦截器url新增, /SysInterUrlController/add, 2, null, null, null, null, null
+<==        Row: 506440708056551424, 拦截器url修改, /SysInterUrlController/edit, 2, null, null, null, null, null
+<==        Row: 506440802856210432, 拦截器url删除, /SysInterUrlController/remove, 3, null, null, null, null, null
+<==        Row: 506441001783660544, 公告新增, /SysNoticeController/add, 2, null, null, null, null, null
+<==        Row: 506441051263864832, 公告修改, /SysNoticeController/edit, 2, null, null, null, null, null
+<==        Row: 506441105743679488, 公告删除, /SysNoticeController/remove, 3, null, null, null, null, null
+<==        Row: 506441242591236096, 职位新增, /SysPositionController/add, 2, null, null, null, null, null
+<==        Row: 506441287038275584, 职位修改, /SysPositionController/edit, 2, null, null, null, null, null
+<==        Row: 506441350200299520, 职位删除, /SysPositionController/remove, 3, null, null, null, null, null
+<==        Row: 506441420677189632, 职位状态修改, /SysPositionController/updateVisible, 4, null, null, null, null, null
+<==        Row: 506441780003213312, 省份新增, /SysProvinceController/add, 2, null, null, null, null, null
+<==        Row: 506441807383629824, 省份修改, /SysProvinceController/edit, 2, null, null, null, null, null
+<==        Row: 506441871850082304, 省份删除, /SysProvinceController/remove, 3, null, null, null, null, null
+<==        Row: 506441980012793856, 街道新增, /SysStreetController/add, 2, null, null, null, null, null
+<==        Row: 506442015706320896, 街道修改, /SysStreetController/edit, 2, null, null, null, null, null
+<==        Row: 506442092445306880, 街道删除, /SysStreetController/remove, 3, null, null, null, null, null
+<==        Row: 506442186552905728, 用户新增, /UserController/add, 2, null, null, null, null, null
+<==        Row: 506442212696002560, 用户修改, /UserController/edit, 2, null, null, null, null, null
+<==        Row: 506442271252680704, 用户修改密码, /UserController/editPwd, 2, null, null, null, null, null
+<==        Row: 506442344443285504, 用户删除, /UserController/remove, 3, null, null, null, null, null
+<==        Row: 506444610625736704, 拦截器url复制, /SysInterUrlController/copy/, 3, null, null, null, null, null
+<==      Total: 58
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36b0fcd5]
+2026-09-30 07:37:46.303 -> [main] -> INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+
+
+,------.                           ,--.  ,--.         ,--.                         
+|  .--. '  ,--,--.  ,---.   ,---.  |  '--'  |  ,---.  |  |  ,---.   ,---.  ,--.--. 
+|  '--' | ' ,-.  | | .-. | | .-. : |  .--.  | | .-. : |  | | .-. | | .-. : |  .--' 
+|  | --'  \ '-'  | ' '-' ' \   --. |  |  |  | \   --. |  | | '-' ' \   --. |  |    
+`--'       `--`--' .`-  /   `----' `--'  `--'  `----' `--' |  |-'   `----' `--'    
+                   `---'                                   `--'                        is intercepting.
+
+2026-09-30 07:37:47.597 -> [main] -> INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-30 07:37:47.599 -> [main] -> INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-30 07:37:47.599 -> [main] -> INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+2026-09-30 07:37:47.599 -> [main] -> INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-30 07:37:47.601 -> [main] -> INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-30 07:37:47.602 -> [main] -> INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-30 07:37:47.602 -> [main] -> INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+2026-09-30 07:37:47.602 -> [main] -> INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7d373bcf
+2026-09-30 07:37:47.814 -> [main] -> DEBUG com.fc.v2.common.conf.PutFilter - Filter 'putFilter' configured for use
+2026-09-30 07:37:47.823 -> [main] -> INFO  io.undertow - starting server: Undertow - 2.2.20.Final
+2026-09-30 07:37:47.862 -> [main] -> INFO  org.xnio - XNIO version 3.8.7.Final
+2026-09-30 07:37:47.877 -> [main] -> INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
+2026-09-30 07:37:47.967 -> [main] -> INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
+2026-09-30 07:37:48.048 -> [main] -> INFO  o.s.boot.web.embedded.undertow.UndertowWebServer - Undertow started on port(s) 18081 (http)
+2026-09-30 07:37:48.050 -> [main] -> INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Documentation plugins bootstrapped
+2026-09-30 07:37:48.056 -> [main] -> INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2026-09-30 07:37:48.215 -> [main] -> INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2026-09-30 07:37:48.450 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_1
+2026-09-30 07:37:48.452 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.529 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.552 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.680 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: detailUsingGET_1
+2026-09-30 07:37:48.688 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2026-09-30 07:37:48.694 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: detailUsingGET_2
+2026-09-30 07:37:48.704 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: supplementUsingPOST_1
+2026-09-30 07:37:48.707 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: trailUsingGET_1
+2026-09-30 07:37:48.717 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2026-09-30 07:37:48.735 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_3
+2026-09-30 07:37:48.738 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.747 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2026-09-30 07:37:48.753 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: detailUsingGET_3
+2026-09-30 07:37:48.760 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_4
+2026-09-30 07:37:48.763 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: advanceUsingPOST_1
+2026-09-30 07:37:48.765 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: rollbackUsingPOST_1
+2026-09-30 07:37:48.770 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_5
+2026-09-30 07:37:48.771 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.772 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_1
+2026-09-30 07:37:48.773 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.774 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_2
+2026-09-30 07:37:48.776 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.782 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.783 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_2
+2026-09-30 07:37:48.798 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.799 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_3
+2026-09-30 07:37:48.805 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_2
+2026-09-30 07:37:48.810 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_6
+2026-09-30 07:37:48.812 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.814 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.819 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.820 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_4
+2026-09-30 07:37:48.826 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_3
+2026-09-30 07:37:48.828 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_1
+2026-09-30 07:37:48.833 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_1
+2026-09-30 07:37:48.839 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_7
+2026-09-30 07:37:48.846 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_1
+2026-09-30 07:37:48.850 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.852 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_1
+2026-09-30 07:37:48.859 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.863 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_1
+2026-09-30 07:37:48.866 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.868 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_5
+2026-09-30 07:37:48.885 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_4
+2026-09-30 07:37:48.889 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_2
+2026-09-30 07:37:48.904 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_8
+2026-09-30 07:37:48.910 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingPOST_1
+2026-09-30 07:37:48.912 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_2
+2026-09-30 07:37:48.914 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.914 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_2
+2026-09-30 07:37:48.916 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.917 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_2
+2026-09-30 07:37:48.918 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.919 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_6
+2026-09-30 07:37:48.923 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_5
+2026-09-30 07:37:48.926 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_2
+2026-09-30 07:37:48.928 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_3
+2026-09-30 07:37:48.933 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_9
+2026-09-30 07:37:48.936 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_3
+2026-09-30 07:37:48.943 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.947 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_3
+2026-09-30 07:37:48.949 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.951 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_3
+2026-09-30 07:37:48.952 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.954 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_7
+2026-09-30 07:37:48.958 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_6
+2026-09-30 07:37:48.960 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_3
+2026-09-30 07:37:48.961 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_4
+2026-09-30 07:37:48.964 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateEnableUsingPUT_1
+2026-09-30 07:37:48.966 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_10
+2026-09-30 07:37:48.968 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_4
+2026-09-30 07:37:48.969 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.970 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_4
+2026-09-30 07:37:48.971 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.972 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_4
+2026-09-30 07:37:48.973 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:48.975 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_8
+2026-09-30 07:37:48.994 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_7
+2026-09-30 07:37:48.997 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_5
+2026-09-30 07:37:49.002 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_11
+2026-09-30 07:37:49.005 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_5
+2026-09-30 07:37:49.006 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.007 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_5
+2026-09-30 07:37:49.008 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.009 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_5
+2026-09-30 07:37:49.010 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.010 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_9
+2026-09-30 07:37:49.013 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_6
+2026-09-30 07:37:49.017 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_12
+2026-09-30 07:37:49.019 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_6
+2026-09-30 07:37:49.019 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.020 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_6
+2026-09-30 07:37:49.021 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.022 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_6
+2026-09-30 07:37:49.023 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.023 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_10
+2026-09-30 07:37:49.028 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_8
+2026-09-30 07:37:49.031 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_4
+2026-09-30 07:37:49.032 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_7
+2026-09-30 07:37:49.035 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_13
+2026-09-30 07:37:49.038 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingPOST_2
+2026-09-30 07:37:49.040 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_7
+2026-09-30 07:37:49.041 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.042 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_7
+2026-09-30 07:37:49.043 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.044 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_7
+2026-09-30 07:37:49.045 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.046 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_11
+2026-09-30 07:37:49.050 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_9
+2026-09-30 07:37:49.052 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_5
+2026-09-30 07:37:49.054 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_8
+2026-09-30 07:37:49.056 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_14
+2026-09-30 07:37:49.061 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_8
+2026-09-30 07:37:49.065 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.066 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_8
+2026-09-30 07:37:49.069 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.070 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_8
+2026-09-30 07:37:49.071 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.071 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_12
+2026-09-30 07:37:49.074 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.076 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.079 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_9
+2026-09-30 07:37:49.082 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_15
+2026-09-30 07:37:49.085 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.086 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_13
+2026-09-30 07:37:49.100 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_10
+2026-09-30 07:37:49.105 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_6
+2026-09-30 07:37:49.111 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_10
+2026-09-30 07:37:49.115 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateVisibleUsingPUT_1
+2026-09-30 07:37:49.122 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: selectParentUsingGET_1
+2026-09-30 07:37:49.127 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_9
+2026-09-30 07:37:49.136 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_9
+2026-09-30 07:37:49.138 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.139 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_9
+2026-09-30 07:37:49.141 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.142 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_14
+2026-09-30 07:37:49.147 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_11
+2026-09-30 07:37:49.151 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_7
+2026-09-30 07:37:49.152 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_11
+2026-09-30 07:37:49.155 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateVisibleUsingPUT_2
+2026-09-30 07:37:49.158 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingPOST_1
+2026-09-30 07:37:49.160 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingPOST_3
+2026-09-30 07:37:49.162 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_10
+2026-09-30 07:37:49.163 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.164 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_10
+2026-09-30 07:37:49.165 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.166 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_10
+2026-09-30 07:37:49.167 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.167 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_15
+2026-09-30 07:37:49.172 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_12
+2026-09-30 07:37:49.174 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_8
+2026-09-30 07:37:49.176 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_12
+2026-09-30 07:37:49.179 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_16
+2026-09-30 07:37:49.182 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_11
+2026-09-30 07:37:49.183 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.184 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_11
+2026-09-30 07:37:49.186 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.187 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_11
+2026-09-30 07:37:49.188 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.190 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_16
+2026-09-30 07:37:49.197 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_13
+2026-09-30 07:37:49.204 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_9
+2026-09-30 07:37:49.205 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_13
+2026-09-30 07:37:49.208 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_17
+2026-09-30 07:37:49.209 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_12
+2026-09-30 07:37:49.211 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.212 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_12
+2026-09-30 07:37:49.213 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.214 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_12
+2026-09-30 07:37:49.214 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.215 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_17
+2026-09-30 07:37:49.218 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: cleanUsingDELETE_1
+2026-09-30 07:37:49.221 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_14
+2026-09-30 07:37:49.224 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_18
+2026-09-30 07:37:49.225 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.226 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: detailUsingGET_4
+2026-09-30 07:37:49.227 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.228 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_18
+2026-09-30 07:37:49.232 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_14
+2026-09-30 07:37:49.233 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPUT_1
+2026-09-30 07:37:49.235 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_15
+2026-09-30 07:37:49.238 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_19
+2026-09-30 07:37:49.239 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_13
+2026-09-30 07:37:49.240 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.241 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_13
+2026-09-30 07:37:49.243 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.244 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_19
+2026-09-30 07:37:49.249 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_15
+2026-09-30 07:37:49.282 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_10
+2026-09-30 07:37:49.284 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_16
+2026-09-30 07:37:49.286 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_20
+2026-09-30 07:37:49.287 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: checkNameUniqueUsingPOST_13
+2026-09-30 07:37:49.288 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.289 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_14
+2026-09-30 07:37:49.290 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.291 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_14
+2026-09-30 07:37:49.291 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.292 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_20
+2026-09-30 07:37:49.297 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_16
+2026-09-30 07:37:49.300 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editSaveUsingPOST_11
+2026-09-30 07:37:49.301 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: removeUsingDELETE_17
+2026-09-30 07:37:49.307 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_21
+2026-09-30 07:37:49.309 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_22
+2026-09-30 07:37:49.310 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.311 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingGET_15
+2026-09-30 07:37:49.312 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.313 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editUsingGET_15
+2026-09-30 07:37:49.315 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.318 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.320 -> [main] -> WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader - Trying to infer dataType org.springframework.ui.ModelMap
+2026-09-30 07:37:49.321 -> [main] -> INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: viewUsingGET_21
+2026-09-30 07:37:49.332 -> [main] -> INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-30 07:37:49.332 -> [main] -> INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-30 07:37:49.346 -> [main] -> INFO  com.fc.V2Application - Started V2Application in 35.872 seconds (JVM running for 38.744)
+2026-09-30 07:37:49.491 -> [XNIO-1 task-1] -> INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-30 07:37:49.492 -> [XNIO-1 task-1] -> INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-30 07:37:49.494 -> [XNIO-1 task-1] -> INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-30 07:37:49.513 -> [XNIO-1 task-1] -> INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
