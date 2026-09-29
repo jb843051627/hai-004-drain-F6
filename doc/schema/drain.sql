@@ -143,14 +143,76 @@ CREATE TABLE IF NOT EXISTS t_drain_duty_shift (
   KEY idx_span (start_at, end_at, status)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='汛期泵站值守排班表';
 
+-- 泵站类别是层级标签树：parent_id=0 为根层，leaf_flag=1 才是末级。
+-- 站档案与机组挂类别只许挂末级代号(type_code)，挂到上层当场报错；
+-- status=1 的老类别停用后不再可选，先前挂出去的标签原样留着，不回改不摘除。
+CREATE TABLE IF NOT EXISTS t_drain_site_type (
+  id bigint NOT NULL COMMENT '主键',
+  type_code varchar(64) DEFAULT NULL COMMENT '类别代号(站档案/机组挂这个,未删范围内唯一)',
+  type_name varchar(128) DEFAULT NULL COMMENT '类别名称',
+  parent_id bigint DEFAULT '0' COMMENT '父类别主键 0=根层',
+  leaf_flag int DEFAULT '0' COMMENT '末级标记 0上层 1末级(只许挂末级)',
+  status int DEFAULT '0' COMMENT '状态 0在用 1已停用(停用不可新挂,旧挂原样留)',
+  order_num int DEFAULT '0' COMMENT '同层排序号',
+  del_flag int DEFAULT '0' COMMENT '删除标记 0正常 1删除',
+  create_by varchar(64) DEFAULT NULL COMMENT '创建者',
+  create_time datetime DEFAULT NULL COMMENT '创建时间',
+  update_by varchar(64) DEFAULT NULL COMMENT '更新者',
+  update_time datetime DEFAULT NULL COMMENT '更新时间',
+  remark varchar(500) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (id),
+  KEY idx_parent (parent_id, order_num, id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='泵站类别标签树(只许挂末级)';
+
+-- 机组挂在泵站名下：一条机组一个计量点编码，远传计量(t_drain_meter_row.item_code)、
+-- 台账检索、运行录单都拿它对锚。计量点编码全局唯一，逻辑删也不复用——
+-- 编码是对着远传报文的外部锚点，复用会把新机组的账算到旧读数上。
+CREATE TABLE IF NOT EXISTS t_drain_pump_unit (
+  id bigint NOT NULL COMMENT '主键',
+  unit_no varchar(64) DEFAULT NULL COMMENT '机组编号(站内未删范围内唯一)',
+  unit_name varchar(128) DEFAULT NULL COMMENT '机组名称',
+  site_id bigint NOT NULL COMMENT '所属泵站 t_drain_station.id',
+  site_no varchar(64) DEFAULT NULL COMMENT '泵站编号(照档案回填,不信表单)',
+  item_code varchar(64) DEFAULT NULL COMMENT '计量点编码(全局唯一,台账检索/远传对锚)',
+  site_type varchar(32) DEFAULT NULL COMMENT '机组类别标签(末级类别代号,只许挂末级在用类别)',
+  del_flag int DEFAULT '0' COMMENT '删除标记 0正常 1删除',
+  create_by varchar(64) DEFAULT NULL COMMENT '创建者',
+  create_time datetime DEFAULT NULL COMMENT '创建时间',
+  update_by varchar(64) DEFAULT NULL COMMENT '更新者',
+  update_time datetime DEFAULT NULL COMMENT '更新时间',
+  remark varchar(500) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_item_code (item_code),
+  KEY idx_site (site_id, del_flag, id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='泵站机组档案(挂类别末级标签)';
+
+-- 片区授权：登录名 -> 管辖片区(与 t_drain_station.road_name 同文案)。
+-- 各片区的人只看得见授权片区名下的泵站/机组/运行单——查询 where 层就裁掉，不是界面藏。
+-- 管理员角色与 admin 不走这张表（全片可见）；表里一行没有的普通登录人一片都看不到。
+CREATE TABLE IF NOT EXISTS t_drain_area_grant (
+  id bigint NOT NULL COMMENT '主键',
+  username varchar(64) NOT NULL COMMENT '被授权登录名',
+  road_name varchar(128) NOT NULL COMMENT '管辖片区(同 t_drain_station.road_name)',
+  del_flag int DEFAULT '0' COMMENT '删除标记 0正常 1删除',
+  create_by varchar(64) DEFAULT NULL COMMENT '创建者',
+  create_time datetime DEFAULT NULL COMMENT '创建时间',
+  update_by varchar(64) DEFAULT NULL COMMENT '更新者',
+  update_time datetime DEFAULT NULL COMMENT '更新时间',
+  remark varchar(500) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_user_road (username, road_name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='登录人片区授权(数据权限底册)';
+
 CREATE TABLE IF NOT EXISTS t_drain_run_record (
   id bigint NOT NULL COMMENT '主键',
-  bill_no varchar(64) DEFAULT NULL COMMENT '运行单号',
-  site_id int DEFAULT NULL COMMENT '受录泵站',
-  site_no varchar(64) DEFAULT NULL COMMENT '泵站编号',
+  bill_no varchar(64) DEFAULT NULL COMMENT '运行单号(人手填,未删范围内唯一)',
+  unit_id bigint DEFAULT NULL COMMENT '受录机组 t_drain_pump_unit.id(一机组一年一单锚点)',
+  site_id bigint DEFAULT NULL COMMENT '受录泵站(照机组所属站回填)',
+  site_no varchar(64) DEFAULT NULL COMMENT '泵站编号(照档案回填)',
+  run_year int DEFAULT NULL COMMENT '运行年度(系统登记年,不由表单给)',
   qty decimal(12,2) DEFAULT NULL COMMENT '机组实际运行时长(小时)',
-  fine_amt decimal(12,2) DEFAULT NULL COMMENT '电耗核算费(元)',
-  grade_level int DEFAULT NULL COMMENT '运行评定档',
+  fine_amt decimal(12,2) DEFAULT NULL COMMENT '电耗核算费(元,系统照时长×单价核算,人不动手)',
+  grade_level int DEFAULT NULL COMMENT '运行评定档(系统照档案三档上限折,人不动手)',
   status int DEFAULT NULL COMMENT '状态 0待复核 1已复核 2已封存',
   del_flag int DEFAULT '0' COMMENT '删除标记 0正常 1删除',
   create_by varchar(64) DEFAULT NULL COMMENT '创建者',
@@ -158,8 +220,13 @@ CREATE TABLE IF NOT EXISTS t_drain_run_record (
   update_by varchar(64) DEFAULT NULL COMMENT '更新者',
   update_time datetime DEFAULT NULL COMMENT '更新时间',
   remark varchar(500) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='机组运行记录单';
+  PRIMARY KEY (id),
+  -- 单号手填也不许重：库唯一键兜底并发两笔同号
+  UNIQUE KEY uk_bill_no (bill_no),
+  -- 一机组一年只许一单：库唯一键钉死，同年第二张当场撞键退回
+  UNIQUE KEY uk_unit_year (unit_id, run_year),
+  KEY idx_site_year (site_no, run_year, id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='机组运行记录单(一机组一年一单)';
 
 CREATE TABLE IF NOT EXISTS t_drain_station (
   id bigint NOT NULL COMMENT '主键',

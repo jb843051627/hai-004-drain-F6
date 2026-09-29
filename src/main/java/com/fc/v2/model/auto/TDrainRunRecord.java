@@ -32,20 +32,32 @@ public class TDrainRunRecord implements Serializable {
     @ApiModelProperty(value = "主键")
     private Long id;
 
-    /** 运行单号 */
+    /** 运行单号（人手填，未删范围内唯一） */
     @TableField("bill_no")
     @ApiModelProperty(value = "运行单号")
     private String billNo;
 
-    /** 受录泵站 */
+    /** 受录机组（一机组一年一单的锚点） */
+    @TableField("unit_id")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty(value = "受录机组")
+    private Long unitId;
+
+    /** 受录泵站（照机组所属站回填，不信表单） */
     @TableField("site_id")
+    @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty(value = "受录泵站")
-    private Integer siteId;
+    private Long siteId;
 
     /** 泵站编号 */
     @TableField("site_no")
     @ApiModelProperty(value = "泵站编号")
     private String siteNo;
+
+    /** 运行年度（系统登记年，不由表单给） */
+    @TableField("run_year")
+    @ApiModelProperty(value = "运行年度")
+    private Integer runYear;
 
     /** 机组实际运行时长(小时) */
     @TableField("qty")
@@ -115,11 +127,19 @@ public class TDrainRunRecord implements Serializable {
         this.billNo = billNo;
     }
 
-    public Integer getSiteId() {
+    public Long getUnitId() {
+        return unitId;
+    }
+
+    public void setUnitId(Long unitId) {
+        this.unitId = unitId;
+    }
+
+    public Long getSiteId() {
         return siteId;
     }
 
-    public void setSiteId(Integer siteId) {
+    public void setSiteId(Long siteId) {
         this.siteId = siteId;
     }
 
@@ -129,6 +149,14 @@ public class TDrainRunRecord implements Serializable {
 
     public void setSiteNo(String siteNo) {
         this.siteNo = siteNo;
+    }
+
+    public Integer getRunYear() {
+        return runYear;
+    }
+
+    public void setRunYear(Integer runYear) {
+        this.runYear = runYear;
     }
 
     public BigDecimal getQty() {

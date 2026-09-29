@@ -119,6 +119,16 @@ public class GlobalExceptionResolver{
     }
 
     /**
+     * 泵站档案链业务规则异常（类别挂上层/挂停用类别、停用站录新单、一机组当年开第二张、
+     * 时长为负为零或数量级离谱、手填单号撞号、跨片区翻看等红线）：当场退回，单据不进流水。
+     */
+    @ExceptionHandler(DrainArchiveException.class)
+    public AjaxResult drainArchiveException(DrainArchiveException e)
+    {
+        return AjaxResult.error(e.getMessage());
+    }
+
+    /**
      * 温/湿度断传人工补录业务规则异常（未断传却手补、非温湿度表计、重复补、抄表时刻顶替等红线）
      */
     @ExceptionHandler(DrainMeterSupplementException.class)

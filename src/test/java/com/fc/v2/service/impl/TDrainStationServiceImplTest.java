@@ -24,9 +24,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fc.v2.common.dataSources.DrainAreaScope;
+import com.fc.v2.common.exception.DrainArchiveException;
 import com.fc.v2.common.exception.DrainDispatchException;
 import com.fc.v2.mapper.auto.TDrainStationMapper;
 import com.fc.v2.model.auto.TDrainStation;
+import com.fc.v2.model.auto.TDrainSiteType;
+import com.fc.v2.service.ITDrainSiteTypeService;
 
 /**
  * 在册泵站档案红线测试（内存库模拟表）：
@@ -112,7 +116,22 @@ class TDrainStationServiceImplTest {
 
         service = new TDrainStationServiceImpl();
         ReflectionTestUtils.setField(service, "drainStationMapper", mapper);
+        // 无 Shiro 上下文：DrainAreaScope 视作系统调用，全片可见
+        ReflectionTestUtils.setField(service, "drainAreaScope", new DrainAreaScope());
+        // 类别标签服务：默认放行（回一个末级在用类别）；个别用例可改桩模拟上层/停用
+        ITDrainSiteTypeService typeService = mock(ITDrainSiteTypeService.class);
+        when(typeService.requireLeafEnabled(any())).thenAnswer(inv -> {
+            TDrainSiteType t = new TDrainSiteType();
+            t.setTypeCode(inv.getArgument(0));
+            t.setLeafFlag(1);
+            t.setStatus(0);
+            return t;
+        });
+        ReflectionTestUtils.setField(service, "drainSiteTypeService", typeService);
+        this.typeService = typeService;
     }
+
+    private ITDrainSiteTypeService typeService;
 
     private TDrainStation stored(String siteNo, int status) {
         TDrainStation s = new TDrainStation();
@@ -225,6 +244,55 @@ class TDrainStationServiceImplTest {
         patch.setSiteNo("PS00");
         assertThrows(DrainDispatchException.class, () -> service.updateTDrainStation(patch));
         assertEquals("PS01", stations.get(b.getId()).getSiteNo());
+    }
+
+    // 10. 挂上层类别当场报错（末级才可挂）
+    @Test
+    void insert_upperLevelType_rejected() {
+        when(typeService.requireLeafEnabled("YS")).thenThrow(
+                new DrainArchiveException("[YS]是上层类别，标签只许挂末级"));
+        TDrainStation f = form("PS20", "上层标签泵站");
+        f.setSiteType("YS");
+        assertThrows(DrainArchiveException.class, () -> service.insertTDrainStation(f));
+        assertTrue(stations.isEmpty());
+    }
+
+    // 11. 挂已停用类别当场报错
+    @Test
+    void insert_disabledType_rejected() {
+        when(typeService.requireLeafEnabled("YS_LX")).thenThrow(
+                new DrainArchiveException("类别[YS_LX]已停用，不再可选"));
+        TDrainStation f = form("PS21", "停用标签泵站");
+        f.setSiteType("YS_LX");
+        assertThrows(DrainArchiveException.class, () -> service.insertTDrainStation(f));
+        assertTrue(stations.isEmpty());
+    }
+
+    // 12. 先前挂过老标签的站：编辑不换标签时类别不重校，老标签原样留（哪怕类别已停用）
+    @Test
+    void update_unchangedOldTag_notRevalidated() {
+        TDrainStation s = stored("PS00", 0);
+        s.setSiteType("雨水"); // 先前挂的老标签（上层代号老文案）
+        TDrainStation patch = new TDrainStation();
+        patch.setId(s.getId());
+        patch.setSiteType("雨水"); // 表单照原值回显
+        patch.setSiteName("改名不换标签泵站");
+        assertEquals(1, service.updateTDrainStation(patch));
+        assertEquals("雨水", stations.get(s.getId()).getSiteType(), "老标签原样留，不重校不摘除");
+    }
+
+    // 13. 换标签才走末级校验：换成上层类别当场退回且原值不动
+    @Test
+    void update_changeToUpperTag_rejected() {
+        TDrainStation s = stored("PS00", 0);
+        s.setSiteType("YS_AX");
+        when(typeService.requireLeafEnabled("YS")).thenThrow(
+                new DrainArchiveException("[YS]是上层类别，标签只许挂末级"));
+        TDrainStation patch = new TDrainStation();
+        patch.setId(s.getId());
+        patch.setSiteType("YS");
+        assertThrows(DrainArchiveException.class, () -> service.updateTDrainStation(patch));
+        assertEquals("YS_AX", stations.get(s.getId()).getSiteType());
     }
 
     // ---- 参数抠取小工具（QueryWrapper 参数按 "?" 全局先后次序绑定） ----

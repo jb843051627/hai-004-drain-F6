@@ -21,6 +21,8 @@ fuce:
   roll-verification: false
   # 文件路径 示例（ Windows配置D:/v2/uploadPath，Linux配置 /home/v2/uploadPath）
   profile: D:/v2/uploadPath
+  # 机组运行电耗核算单价（元/运行小时）：运行单电耗费=运行时长×此单价，系统核算，页面不可填
+  drain-power-price: 0.80
 #tomcat config
 server :
   port : 8080

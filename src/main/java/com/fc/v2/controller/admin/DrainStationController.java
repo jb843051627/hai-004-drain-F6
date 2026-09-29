@@ -37,15 +37,20 @@ public class DrainStationController extends BaseController {
     private ITDrainStationService drainStationService;
 
     @Log(title = "在册泵站档案台账", action = "list")
-    @ApiOperation(value = "泵站档案台账", notes = "只摆未删档案，在用/停用照实摆，按编号排序")
+    @ApiOperation(value = "泵站档案台账", notes = "只摆未删档案，在用/停用照实摆；顶栏检索照站号或计量点编码精确命中；"
+            + "按编号+主键排序，翻页排列稳；片区数据权限在服务层 where 里裁")
     @GetMapping("/list")
     @RequiresPermissions("drainStation:list")
     @ResponseBody
-    public ResultTable list(TDrainStation query) {
+    public ResultTable list(TDrainStation query,
+                            @RequestParam(value = "keyword", required = false) String keyword) {
         QueryWrapper<TDrainStation> wrapper = new QueryWrapper<>();
         wrapper.eq("del_flag", 0);
         if (query.getStatus() != null) {
             wrapper.eq("status", query.getStatus());
+        }
+        if (query.getRoadName() != null && !query.getRoadName().trim().isEmpty()) {
+            wrapper.eq("road_name", query.getRoadName().trim());
         }
         if (query.getSiteNo() != null && !query.getSiteNo().trim().isEmpty()) {
             wrapper.eq("site_no", query.getSiteNo().trim());
@@ -53,6 +58,16 @@ public class DrainStationController extends BaseController {
         if (query.getSiteName() != null && !query.getSiteName().trim().isEmpty()) {
             wrapper.like("site_name", query.getSiteName().trim());
         }
+        // 顶栏一栏检索：站号或计量点编码精确命中（计量点编码挂在机组上，先对机组再回站号）。
+        // 命中条数与片区浏览同一条 where（含服务层片区裁片），分页计数与列表同源，两头对得上。
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            String kw = keyword.trim();
+            wrapper.and(w -> w.eq("site_no", kw)
+                    .or()
+                    .apply("site_no IN (SELECT site_no FROM t_drain_pump_unit "
+                            + "WHERE del_flag = 0 AND item_code = {0})", kw));
+        }
+        // 编号外再钉主键收尾：编号相同也不会翻页时串行
         wrapper.orderByAsc("site_no", "id");
         startPage();
         com.github.pagehelper.PageInfo<TDrainStation> page =

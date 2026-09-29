@@ -1,5 +1,7 @@
 package com.fc.v2.common.conf;
 
+import java.math.BigDecimal;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +34,17 @@ public class V2Config
     private Boolean rollVerification;
     /** 文件路径 **/
     private String profile;
+
+    /** 机组运行电耗核算单价（元/运行小时）：运行单电耗费由系统照 时长×单价 核算，人不动手 */
+    private BigDecimal drainPowerPrice = new BigDecimal("0.80");
+
+    public BigDecimal getDrainPowerPrice() {
+        return drainPowerPrice;
+    }
+
+    public void setDrainPowerPrice(BigDecimal drainPowerPrice) {
+        this.drainPowerPrice = drainPowerPrice;
+    }
 
 	public String getName() {
 		return name;
